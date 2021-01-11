@@ -1,6 +1,6 @@
 ## WELCOME IMAGE GENERATOR
 
-#### support server\
+#### support server<br />
 https://discord.gg/qbnq6mPdyb
 
 ```js
