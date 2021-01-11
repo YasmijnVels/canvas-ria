@@ -1,5 +1,8 @@
 ## WELCOME IMAGE GENERATOR
 
+#### support server\
+https://discord.gg/qbnq6mPdyb
+
 ```js
 const Discord = require("discord.js");
 const client = new Discord.Client();
