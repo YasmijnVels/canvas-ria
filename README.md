@@ -28,10 +28,24 @@ client.on('guildMemberAdd', async member => {
     channel.send(attachment);   
    });
 
+   client.on('guildMemberRemove', async member => {
+	const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
+	if (!channel) return;
+
+   let data = await riaCanvas.leave(member, { link: "https://i.pinimg.com/originals/6c/d4/eb/6cd4ebf5081d9427be9a0316e664d0fc.jpg" })
+
+    const attachment = new Discord.MessageAttachment(
+      data,
+      "leave-image.png"
+    );
+
+    channel.send(attachment);   
+   });
+
 client.login("TOKEN");
 ```
 
-![](https://cdn.discordapp.com/attachments/797812590553333760/798267833641467954/welcome-image.png)
+![](https://i.ibb.co/bsTvkwW/welcome-image-2.png)
 
 ### OPTIONS OF WELCOME
 
@@ -58,6 +72,35 @@ let data = await riaCanvas.welcome(member, {options})
  let data = await riaCanvas.welcome(member, { link: "https://i.pinimg.com/originals/6c/d4/eb/6cd4ebf5081d9427be9a0316e664d0fc.jpg", block: false })
 ```
 
+## Leave card
+
+
+![](https://i.ibb.co/mHc3dV7/welcome-image-1.png)
+
+### OPTIONS OF leave
+
+```js
+let data = await riaCanvas.leave(member, {options})
+```
+
+**link**: Link of the background image of leave image || String
+```js
+  let data = await riaCanvas.leave(member, { link: "https://i.pinimg.com/originals/6c/d4/eb/6cd4ebf5081d9427be9a0316e664d0fc.jpg" })
+```
+**blur**: Disable and enable blur effect (default = true) || Boolean
+```js
+ let data = await riaCanvas.leave(member, { link: "https://i.pinimg.com/originals/6c/d4/eb/6cd4ebf5081d9427be9a0316e664d0fc.jpg", blur: false }) //Disables The Blur
+```
+**gradiant**: Add gradiant image as background image of leave image || String
+```js
+ let data = await riaCanvas.leave(member, { gradiant: "peakblue" })
+ //GRADIANTS NAME - coldsky, peakblue, pinkman, aqua, darkness, angel
+```
+
+**block**: Remove the transparent image from image
+```js
+ let data = await riaCanvas.leave(member, { link: "https://i.pinimg.com/originals/6c/d4/eb/6cd4ebf5081d9427be9a0316e664d0fc.jpg", block: false })
+```
 
 
 ## RANK CARD(CUSTOM BKGROUND)
@@ -107,4 +150,4 @@ client.login("TOKEN")
 ```
 
 # RESULT
-![](https://cdn.discordapp.com/attachments/797812590553333760/798267832407293992/rank-image.png)
+![](https://i.ibb.co/XkvdQ1Z/rank-image-1.png)
